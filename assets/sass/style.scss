@@ -1,0 +1,281 @@
+// Layout design
+$Mobile: 375px;
+$Desktop: 1440px;
+
+// Primary
+$Light-red: hsl(0, 100%, 67%);
+$Orangey-yellow: hsl(39, 100%, 56%);
+$Green-teal: hsl(166, 100%, 37%);
+$Cobalt-blue: hsl(234, 85%, 45%);
+
+// Gradient background
+$Light-slate-blue: hsl(252, 100%, 67%);
+$Light-royal-blue: hsl(241, 81%, 54%);
+
+// Gradient circle
+$Violet-blue: hsla(256, 72%, 46%, 1);
+$Persian-blue: hsla(241, 72%, 46%, 0);
+
+// Neutral
+$White: hsl(0, 0%, 100%);
+$Pale-blue: hsl(221, 100%, 96%);
+$Light-lavender: hsl(241, 100%, 89%);
+$Dark-gray-blue: hsl(224, 30%, 27%);
+
+// Font
+$Font-size: 18px;
+$Font-family: "Hanken Grotesk";
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("../fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $Font-family;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  background-color: $White;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .main-card {
+    width: 100%;
+    height: 100%;
+
+    .result {
+      background: linear-gradient(
+        to bottom,
+        $Light-slate-blue,
+        $Light-royal-blue
+      );
+      padding: 30px 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+
+      .result-title {
+        color: $Light-lavender;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: 1.1em;
+      }
+
+      .result-circle {
+        border-radius: 100%;
+        height: 140px;
+        width: 140px;
+        background: linear-gradient(to bottom, $Violet-blue, $Persian-blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 2px;
+        margin: auto;
+
+        .result-circle__result-value {
+          font-size: 3em;
+          color: $Pale-blue;
+          font-weight: bold;
+        }
+
+        .result-circle__main-value {
+          color: $Light-lavender;
+          font-size: 1.1em;
+        }
+      }
+
+      .result-condition {
+        text-align: center;
+        font-size: 1.5em;
+        color: $Pale-blue;
+      }
+
+      .result-paragraf {
+        font-size: 1em;
+        color: $Light-lavender;
+        text-align: center;
+      }
+    }
+
+    .summary {
+      padding: 20px 30px;
+      font-size: $Font-size;
+      color: $Dark-gray-blue;
+
+      .summary-list {
+        margin: 15px 0;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+
+        // Extend/Inheritance in Sass
+        %item {
+          border-radius: 13px;
+          width: 100%;
+          padding: 20px;
+          border: none;
+          font-weight: 600;
+        }
+
+        .summary-item {
+          @extend %item;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .summary-item__summary-value span {
+            color: $Dark-gray-blue;
+            opacity: 50%;
+          }
+        }
+
+        .red {
+          @extend %item;
+          background-color: hsla(0, 100%, 67%, 0.15);
+
+          .summary-item__summary-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            color: $Light-red;
+          }
+        }
+
+        .orange {
+          @extend %item;
+          background-color: hsl(39, 100%, 56%, 0.15);
+
+          .summary-item__summary-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            color: $Orangey-yellow;
+          }
+        }
+
+        .green {
+          @extend %item;
+          background-color: hsl(166, 100%, 37%, 0.15);
+
+          .summary-item__summary-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            color: $Green-teal;
+          }
+        }
+
+        .blue {
+          @extend %item;
+          background-color: hsl(234, 85%, 45%, 0.15);
+
+          .summary-item__summary-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            color: $Cobalt-blue;
+          }
+        }
+      }
+
+      .summary-btn {
+        border-radius: 25px;
+        width: 100%;
+        padding: 18px;
+        text-align: center;
+        background-color: $Dark-gray-blue;
+        font-size: $Font-size;
+        color: $White;
+        border: none;
+        cursor: pointer;
+      }
+
+      .summary-btn:hover {
+        background: linear-gradient(
+          to bottom,
+          $Light-slate-blue,
+          $Light-royal-blue
+        );
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .main-card {
+      width: 850px;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 30px;
+      box-shadow: 6px 10px 20px hsl(241, 81%, 54%, 0.1);
+
+      .result {
+        border-radius: inherit;
+        height: 100%;
+        width: 50%;
+
+        .result-title {
+          font-size: 1.5em;
+        }
+
+        .result-circle {
+          width: 200px;
+          height: 200px;
+
+          .result-circle__result-value {
+            font-size: 4em;
+          }
+
+          .result-circle__main-value {
+            font-size: 1.4em;
+          }
+        }
+
+        .result-condition {
+          font-size: 2em;
+        }
+
+        .result-paragraf {
+          font-size: 1.4em;
+        }
+      }
+
+      .summary {
+        height: 100%;
+        width: 50%;
+
+        .summary-title {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}

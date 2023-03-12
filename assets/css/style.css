@@ -1,0 +1,208 @@
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("../fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hanken Grotesk";
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .main-card {
+  width: 100%;
+  height: 100%;
+}
+.main .main-card .result {
+  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+.main .main-card .result .result-title {
+  color: hsl(241, 100%, 89%);
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 1.1em;
+}
+.main .main-card .result .result-circle {
+  border-radius: 100%;
+  height: 140px;
+  width: 140px;
+  background: linear-gradient(to bottom, hsl(256, 72%, 46%), hsla(241, 72%, 46%, 0));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2px;
+  margin: auto;
+}
+.main .main-card .result .result-circle .result-circle__result-value {
+  font-size: 3em;
+  color: hsl(221, 100%, 96%);
+  font-weight: bold;
+}
+.main .main-card .result .result-circle .result-circle__main-value {
+  color: hsl(241, 100%, 89%);
+  font-size: 1.1em;
+}
+.main .main-card .result .result-condition {
+  text-align: center;
+  font-size: 1.5em;
+  color: hsl(221, 100%, 96%);
+}
+.main .main-card .result .result-paragraf {
+  font-size: 1em;
+  color: hsl(241, 100%, 89%);
+  text-align: center;
+}
+.main .main-card .summary {
+  padding: 20px 30px;
+  font-size: 18px;
+  color: hsl(224, 30%, 27%);
+}
+.main .main-card .summary .summary-list {
+  margin: 15px 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+.main .main-card .summary .summary-list .blue, .main .main-card .summary .summary-list .green, .main .main-card .summary .summary-list .orange, .main .main-card .summary .summary-list .red, .main .main-card .summary .summary-list .summary-item {
+  border-radius: 13px;
+  width: 100%;
+  padding: 20px;
+  border: none;
+  font-weight: 600;
+}
+.main .main-card .summary .summary-list .summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .main-card .summary .summary-list .summary-item .summary-item__summary-value span {
+  color: hsl(224, 30%, 27%);
+  opacity: 50%;
+}
+.main .main-card .summary .summary-list .red {
+  background-color: hsla(0, 100%, 67%, 0.15);
+}
+.main .main-card .summary .summary-list .red .summary-item__summary-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: hsl(0, 100%, 67%);
+}
+.main .main-card .summary .summary-list .orange {
+  background-color: hsla(39, 100%, 56%, 0.15);
+}
+.main .main-card .summary .summary-list .orange .summary-item__summary-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: hsl(39, 100%, 56%);
+}
+.main .main-card .summary .summary-list .green {
+  background-color: hsla(166, 100%, 37%, 0.15);
+}
+.main .main-card .summary .summary-list .green .summary-item__summary-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: hsl(166, 100%, 37%);
+}
+.main .main-card .summary .summary-list .blue {
+  background-color: hsla(234, 85%, 45%, 0.15);
+}
+.main .main-card .summary .summary-list .blue .summary-item__summary-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: hsl(234, 85%, 45%);
+}
+.main .main-card .summary .summary-btn {
+  border-radius: 25px;
+  width: 100%;
+  padding: 18px;
+  text-align: center;
+  background-color: hsl(224, 30%, 27%);
+  font-size: 18px;
+  color: hsl(0, 0%, 100%);
+  border: none;
+  cursor: pointer;
+}
+.main .main-card .summary .summary-btn:hover {
+  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+@media only screen and (min-width: 1000px) {
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .main .main-card {
+    width: 850px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    box-shadow: 6px 10px 20px hsla(241, 81%, 54%, 0.1);
+  }
+  .main .main-card .result {
+    border-radius: inherit;
+    height: 100%;
+    width: 50%;
+  }
+  .main .main-card .result .result-title {
+    font-size: 1.5em;
+  }
+  .main .main-card .result .result-circle {
+    width: 200px;
+    height: 200px;
+  }
+  .main .main-card .result .result-circle .result-circle__result-value {
+    font-size: 4em;
+  }
+  .main .main-card .result .result-circle .result-circle__main-value {
+    font-size: 1.4em;
+  }
+  .main .main-card .result .result-condition {
+    font-size: 2em;
+  }
+  .main .main-card .result .result-paragraf {
+    font-size: 1.4em;
+  }
+  .main .main-card .summary {
+    height: 100%;
+    width: 50%;
+  }
+  .main .main-card .summary .summary-title {
+    font-size: 1.5em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
